@@ -13,4 +13,7 @@ public class ClientConstant {
 	public static final String ACCOUNT_REGISTER_FAIL="102";//注册失败
 	public static final String ACCOUNT_LOGIN_SUCCCESS="200";//登录成功
 	public static final String ACCOUNT_LOGIN_FAIL="201";//登录失败，账号密码不符
+	
+	public static final String UPDATE_SUCCESS="300";//更新成功（名字、性别等信息的更新）
+	public static final String UPDATE_FAIL="301";//更新失败（名字、性别等信息的更新）
 }

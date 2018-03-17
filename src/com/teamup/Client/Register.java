@@ -31,7 +31,7 @@ public class Register extends HttpServlet {
 		String result;
 		result=ClientUtil.registerClient(request);
 		response.setContentType("text/html;charset=utf-8");
-		response.getWriter().append("message:").append(result);
+		response.getWriter().append(result);
 	}
 
 	/**

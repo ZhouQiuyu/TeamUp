@@ -26,4 +26,10 @@ public class DBSql {
 		String sql="INSERT INTO "+DBConfig.TABLE_USR+"(account,password,name) VALUES('"+account+"','"+password+"','"+name+"')";
 		return sql;
 	}
+	
+	//…Ë÷√√˚◊÷
+	public static String SQL_updateUserName(String account,String name){
+		String sql="UPDATE "+DBConfig.TABLE_USR+" SET name="+"'"+name+"'"+" WHERE account="+"'"+account+"'";
+		return sql;
+	}
 }

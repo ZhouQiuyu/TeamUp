@@ -20,6 +20,8 @@ public class DBResultMessage {
 			return "登陆成功";
 		case "201":
 			return "登录失败,密码不匹配或账号不存在";
+		case "300":
+			return "更新成功";
 		default:
 			return CODE;
 		}

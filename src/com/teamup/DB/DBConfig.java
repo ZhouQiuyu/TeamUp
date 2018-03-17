@@ -16,5 +16,4 @@ public class DBConfig {
 	public static String psd="z1411770819";//数据库连接密码
 	
 	public static final String TABLE_USR="tu_usr";
-	//public static final String TABLE_USR="user";
 }

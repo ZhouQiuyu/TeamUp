@@ -24,19 +24,19 @@ public class DBUtil {
 	public static String code=null;
 	public static String message=null;
 	
-	/*
-	//构造方法，连接初始化
-	public DBUtil(){
-		try {
-			System.out.println("构造方法的执行");
-			connection=DriverManager.getConnection(url, usr, psd);//执行数据库的连接
-			statement=(Statement)connection.createStatement();//创建Statement对象
-		} catch (SQLException e) {
+	public static void getConnect(){
+		try{
+		Class.forName("com.mysql.jdbc.Driver");
+		connection=DriverManager.getConnection(url, usr, psd);
+		statement=(Statement)connection.createStatement();
+		}catch(SQLException e){
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}*/
-	
+	}
+
 	//注册方法——数据库操作
 	public static String regiserClient(String account,String password,String name){
 
@@ -85,16 +85,44 @@ public class DBUtil {
 		}
 	}
 	
-	public static void getConnect(){
+	//更新用户name
+	public static String setUserName(String account,String name){
+		String sql;
 		try{
-		Class.forName("com.mysql.jdbc.Driver");
-		connection=DriverManager.getConnection(url, usr, psd);
-		statement=(Statement)connection.createStatement();
+			getConnect();
+			sql=DBSql.SQL_updateUserName(account, name);
+			if(statement.executeUpdate(sql)>0){
+				return ClientConstant.UPDATE_SUCCESS;//name更新成功
+			}else{
+				return ClientConstant.UPDATE_FAIL;//name更新失败
+			}
 		}catch(SQLException e){
 			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			return e.getMessage();
 		}
+	}
+	public static void setUserEmail(){
+		
+	}
+	public static void setUserGender(){
+		
+	}
+	public static void setUserCollege(){
+		
+	}
+	public static void setUserSchool(){//学院
+		
+	}
+	public static void setUserGrade(){
+		
+	}
+	public static void setUserMajor(){
+		
+	}
+	public static void setUserLab(){
+		
+	}
+	public static void addUserProject(){
+		
 	}
 }
