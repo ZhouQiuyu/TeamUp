@@ -29,7 +29,7 @@ public class ClientUtil {
 	
 	//µÇÂ¼·½·¨
 	public static String loginClient(HttpServletRequest request){
-		
-		return null;
+		String CODE=DBUtil.loginClient(request.getParameter("account"),request.getParameter("password"));
+		return DBResultMessage.getMessage(CODE);
 	}
 }
